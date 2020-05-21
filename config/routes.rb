@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # ログインできたらインデックスに飛ぶ 
   root 'books#index'
 
-  resources :books, only: [:new, :create, :index, :show]
-  
+  resources :books, only: [:new, :create, :index, :show, :destroy, :edit, :update] 
+
 end
