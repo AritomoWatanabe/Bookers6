@@ -1,9 +1,38 @@
-<h1>Books detail</h1>
+<script src="https://kit.fontawesome.com/ed00617fa7.js" crossorigin="anonymous"></script>
 
-<table>
+
+<%= render 'books/header_all' %>
+
+<body>
+
+<div class = "container">
+
+<div class = "row">
+
+<div class = "col-xs-3">
+
+<P class = "message"><%= flash[:update] %></P>
+<P class = "message"><%= flash[:create] %></P>
+
+
+<%= render 'books/user_info', user: @user %>
+
+<%= render 'books/new_book', book: @book_new %>
+
+
+
+</div>
+
+<div class= "col-xs-9">
+
+<h1>Book detail</h1>
+
+<table class ="table">
 
 	<tbody>
 		<tr>
+		<td><%= attachment_image_tag @book.user, :profile_image, size:'60x60', fallback: "no_image.jpg", class: "img-circle pull-left profile-thumb" %>
+      <%= link_to @book.user.name, user_path(@book.user.id) %></td>
 		<td><%= @book.title %></td>
 		<td><%= @book.body %></td>
 
@@ -12,12 +41,36 @@
 		<% end %>
 
 		<% if @book.user == current_user %>
-		<td><%=link_to "Destroy", book_path(@book), method: :delete%></td>
+		<td><%=link_to "Destroy", book_path(@book), method: :delete, "data-confirm" => "本当に消しますか？"%></td>
 		<% end %>
-		
+
 
 		</tr>
 		</tbody>
 
 	</tbody>
 </table>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+
+    <footer>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-xs-3 col-xs-offset-9'>
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+
+

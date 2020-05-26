@@ -1,0 +1,77 @@
+<script src="https://kit.fontawesome.com/ed00617fa7.js" crossorigin="anonymous"></script>
+
+
+<%= render 'books/header_all' %>
+
+
+
+<div class = "container">
+
+<P class = "message"><%= flash[:update] %></P>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div class = "row">
+<div class = "col-xs-3">
+
+
+<%= render 'books/user_info', user: @user %>
+
+<%= render 'books/new_book', book: @book %>
+
+
+
+</div>
+
+<div class= "col-xs-9">
+
+
+
+<h1>Books</h1>
+
+<table class ="table table-hover table-inverse">
+	<thead>
+		<tr>
+			<th> </th>
+			<th>Title</th>
+			<th>Opinion</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+	<% @books.each do |book| %>
+		<tr>
+		<td><%= attachment_image_tag book.user, :profile_image, size:'60x60', fallback: "no_image.jpg", class: "img-circle pull-left profile-thumb" %></td>
+		<td><%= link_to book.title, "/books/#{book.id}" %></td>
+		<td><%= book.body %></td>
+
+
+		</tr>
+		</tbody>
+	<% end %>
+
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+    <footer>
+      <div class='container'>
+        <div class='row'>
+          <div class='col-xs-3 col-xs-offset-9'>
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+

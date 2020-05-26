@@ -15,4 +15,56 @@
  */
 
  @import "bootstrap-sprockets";
- @import "bootstrap"; 
+ @import "bootstrap";
+
+
+#header {
+  	z-index: 9999;
+  	position: fixed;
+  	top: 0px;
+  	left: 0px;
+}
+.btn-success{
+	background-color: #5cb85c;
+    border-color: #4cae4c
+}
+.btn-info{
+	background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+
+body{
+	padding-top: 70px
+}
+
+span{
+	color: white;
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+.container{
+	margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.row{
+	margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-xs-9{
+	position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+
+.message{
+	color: green;
+}
